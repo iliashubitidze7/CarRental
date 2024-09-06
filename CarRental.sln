@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CR", "CR\CR.csproj", "{C6B3D1C6-9789-4D3A-9F05-380DDF990E11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CR.DataAccess", "CR.DataAccess\CR.DataAccess.csproj", "{1F273BBF-6D25-4774-8142-B840EB786338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CR.Models", "CR.Models\CR.Models.csproj", "{2EA34DCE-0A8E-49E6-8F67-79837A6E2DBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6B3D1C6-9789-4D3A-9F05-380DDF990E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B3D1C6-9789-4D3A-9F05-380DDF990E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B3D1C6-9789-4D3A-9F05-380DDF990E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B3D1C6-9789-4D3A-9F05-380DDF990E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F273BBF-6D25-4774-8142-B840EB786338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F273BBF-6D25-4774-8142-B840EB786338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F273BBF-6D25-4774-8142-B840EB786338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F273BBF-6D25-4774-8142-B840EB786338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA34DCE-0A8E-49E6-8F67-79837A6E2DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA34DCE-0A8E-49E6-8F67-79837A6E2DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA34DCE-0A8E-49E6-8F67-79837A6E2DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA34DCE-0A8E-49E6-8F67-79837A6E2DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3003E080-C19F-4BC4-9714-590BF0118F03}
+	EndGlobalSection
+EndGlobal
