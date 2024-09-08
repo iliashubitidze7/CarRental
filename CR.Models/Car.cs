@@ -25,6 +25,8 @@ namespace CR.Models
         [Required]
         public string Transmission { get; set; }
 
+        public string? ImageUrl { get; set; }
+
         public string Interior { get; set; }
 
         public Double Price { get; set; }
