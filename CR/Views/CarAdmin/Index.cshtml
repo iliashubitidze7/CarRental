@@ -1,0 +1,64 @@
+﻿
+<table class="table table-bordered table-striped">
+    <div class="card shadow border-0 mt-4">
+        <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="text-white py-2">Car List</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-4">
+            <div class="row pb-3">
+                <div class="col-6">
+                </div>
+                <div class="col-6 text-end">
+                    <a asp-controller="CarAdmin" asp-action="Create" class="btn btn-primary">
+                        <i class="bi bi-plus-circle-dotted"></i> Create New Car
+                    </a>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Car Model
+                        </th>
+                        <th>
+                            Car Type
+                        </th>
+                        <th>
+                            Year
+                        </th>
+                    </tr>
+                </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Model
+                </td>
+                <td>
+                    @obj.Type
+                </td>
+                <td>
+                    @obj.Year
+                </td>
+
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="CarAdmin" asp-action="Edit" asp-route-Id="@obj.Id" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil-square"></i>Edit
+                        </a>
+                        <a asp-controller="CarAdmin" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-danger mx-2">
+                            <i class="bi bi-x-circle"></i>Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

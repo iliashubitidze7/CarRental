@@ -1,0 +1,255 @@
+﻿@model List<Car>
+
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+<!-- Topbar Start -->
+<div class="container-fluid topbar bg-secondary d-none d-xl-block w-100">
+    <div class="container">
+        <div class="row gx-0 align-items-center" style="height: 45px;">
+            <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+                <div class="d-flex flex-wrap">
+                    <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                    <a href="tel:+01234567890" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+                    <a href="mailto:example@gmail.com" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-end">
+                <div class="d-flex align-items-center justify-content-end">
+                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+<!-- Navbar & Hero Start -->
+<div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="" class="navbar-brand p-0">
+                <a asp-controller="Home" asp-action="Index" class="display-6 text-primary"><i class="fas fa-car-alt me-3"></i></i>CR Rental</a>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    @* <a href="blog.html" class="nav-item nav-link">Blog</a> *@
+                    <a asp-controller="Car" asp-action="Index" class="nav-item nav-link">Our Cars </a>
+                    <a asp-controller="CarAdmin" asp-action="Index" class="nav-item nav-link">Car</a>
+
+
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Get Started</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container-fluid categories pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Vehicle <span class="text-primary">Categories</span></h1>
+            <p class="mb-0">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet nemo expedita asperiores commodi accusantium at cum harum, excepturi, quia tempora cupiditate! Adipisci facilis modi quisquam quia distinctio,
+            </p>
+        </div>
+
+
+        <div class="categories-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+            @foreach (var obj in Model)
+            {
+
+                <div class="categories-item p-4">
+                    <div class="categories-item-inner">
+                        <div class="categories-img rounded-top">
+                            <img src="@obj.ImageUrl" class="img-fluid w-100 rounded-top">
+                        </div>
+                        <div class="categories-content rounded-bottom p-4">
+                            <h4>@obj.Model</h4>
+                            <div class="categories-review mb-4">
+                                <div class="me-3">4.5 Review</div>
+                                <div class="d-flex justify-content-center text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-body"></i>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$@obj.Price/Day</h4>
+                            </div>
+                            <div class="row gy-2 gx-0 text-center mb-4">
+                                <div class="col-4 border-end border-white">
+                                    <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">@obj.Seats Seat</span>
+                                </div>
+                                <div class="col-4 border-end border-white">
+                                    <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+                                </div>
+                                <div class="col-4">
+                                    <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">@obj.Fuel</span>
+                                </div>
+                                <div class="col-4 border-end border-white">
+                                    <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">@obj.Year</span>
+                                </div>
+                                <div class="col-4 border-end border-white">
+                                    <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">@obj.Transmission</span>
+                                </div>
+                                <div class="col-4">
+                                    <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">@obj.Mileage KM</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                @*                 <div class="categories-item p-4">
+            <div class="categories-item-inner">
+            <div class="categories-img rounded-top">
+            <img src="img/car-2.png" class="img-fluid w-100 rounded-top" alt="">
+            </div>
+            <div class="categories-content rounded-bottom p-4">
+            <h4>Toyota Corolla Cross</h4>
+            <div class="categories-review mb-4">
+            <div class="me-3">3.5 Review</div>
+            <div class="d-flex justify-content-center text-secondary">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star text-body"></i>
+            </div>
+            </div>
+            <div class="mb-4">
+            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$128:00/Day</h4>
+            </div>
+            <div class="row gy-2 gx-0 text-center mb-4">
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+            </div>
+            <div class="col-4">
+            <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+            </div>
+            <div class="col-4">
+            <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+            </div>
+            </div>
+            <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+            </div>
+            </div>
+            </div>
+            <div class="categories-item p-4">
+            <div class="categories-item-inner">
+            <div class="categories-img rounded-top">
+            <img src="img/car-3.png" class="img-fluid w-100 rounded-top" alt="">
+            </div>
+            <div class="categories-content rounded-bottom p-4">
+            <h4>Tesla Model S Plaid</h4>
+            <div class="categories-review mb-4">
+            <div class="me-3">3.8 Review</div>
+            <div class="d-flex justify-content-center text-secondary">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star text-body"></i>
+            </div>
+            </div>
+            <div class="mb-4">
+            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$170:00/Day</h4>
+            </div>
+            <div class="row gy-2 gx-0 text-center mb-4">
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+            </div>
+            <div class="col-4">
+            <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+            </div>
+            <div class="col-4">
+            <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+            </div>
+            </div>
+            <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+            </div>
+            </div>
+            </div>
+            <div class="categories-item p-4">
+            <div class="categories-item-inner">
+            <div class="categories-img rounded-top">
+            <img src="img/car-4.png" class="img-fluid w-100 rounded-top" alt="">
+            </div>
+            <div class="categories-content rounded-bottom p-4">
+            <h4>Hyundai Kona Electric</h4>
+            <div class="categories-review mb-4">
+            <div class="me-3">4.8 Review</div>
+            <div class="d-flex justify-content-center text-secondary">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            </div>
+            </div>
+            <div class="mb-4">
+            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$187:00/Day</h4>
+            </div>
+            <div class="row gy-2 gx-0 text-center mb-4">
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+            </div>
+            <div class="col-4">
+            <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+            </div>
+            <div class="col-4 border-end border-white">
+            <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+            </div>
+            <div class="col-4">
+            <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+            </div>
+            </div>
+            <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+            </div>
+            </div>
+            </div> *@
+            }
+        </div>
+    </div>
+</div>

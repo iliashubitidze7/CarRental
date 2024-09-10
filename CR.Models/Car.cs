@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.VisualBasic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CR.Models
@@ -15,6 +16,10 @@ namespace CR.Models
         [Required]
         public string Type { get; set; }
 
+        public string Year { get; set; }
+
+        public string Mileage { get; set; }
+
         [Required]
         [MaxLength(5)]
         public string Seats { get; set; }
@@ -30,8 +35,6 @@ namespace CR.Models
         public string Interior { get; set; }
 
         public Double Price { get; set; }
-
-        public Double PriceFor8 { get; set; }
 
         public DateOnly StartingDate { get; set; }
 

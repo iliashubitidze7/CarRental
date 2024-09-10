@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CR.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240906103834_InitializeDb")]
-    partial class InitializeDb
+    [Migration("20240909084537_InitializeDbCars")]
+    partial class InitializeDbCars
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,14 @@ namespace CR.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Interior")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mileage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -50,9 +57,6 @@ namespace CR.DataAccess.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceFor8")
                         .HasColumnType("float");
 
                     b.Property<string>("Seats")
@@ -68,6 +72,10 @@ namespace CR.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Year")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -21,51 +21,55 @@ namespace CR.DataAccess.Data
                     new Car
                     {
                         Id = 1,
-                        Model = "Mercedes CLS 5.5 2020",
+                        Model = "Mercedes CLS 5.5",
                         Type = "Sedan",
                         Interior = "leathar",
-                        Fuel = "Gasoline",
-                        Transmission = "Authomatic",
+                        Fuel = "Petrol",
+                        Transmission = "Auto",
                         Seats = "4",
                         Price = 100,
-                        PriceFor8 = 80
+                        Mileage = "147",
+                        Year = "2020"
                     },
 
                     new Car
                     {
                         Id = 2,
-                        Model = "Mazda 6 2.0 2016",
+                        Model = "Mazda 6 2.0",
                         Type = "Sedan",
                         Interior = "Fabric",
-                        Fuel = "Gasoline",
-                        Transmission = "Authomatic",
+                        Fuel = "Petrol",
+                        Transmission = "Auto",
                         Seats = "5",
                         Price = 70,
-                        PriceFor8 = 50
+                        Mileage = "95",
+                        Year = "2016"
                     },
                     new Car
                     {
                         Id = 3,
-                        Model = "BMW X5 4.0 2018",
+                        Model = "BMW X5 4.0",
                         Type = "Sedan",
                         Interior = "leathar",
-                        Fuel = "Gasoline",
-                        Transmission = "Mechanical",
+                        Fuel = "Petrol",
+                        Transmission = "Manual",
                         Seats = "4",
                         Price = 90,
-                        PriceFor8 = 70
+                        Mileage = "112",
+                        Year = "2018"
                     },
                     new Car
                     {
                         Id = 4,
-                        Model = "Mecedes Viano 2.5 2021",
+                        Model = "Mecedes Viano 2.5",
                         Type = "Van",
                         Interior = "Fabric",
                         Fuel = "Diesel",
-                        Transmission = "Authomatic",
+                        Transmission = "Auto",
                         Seats = "7",
                         Price = 120,
-                        PriceFor8 = 100
+                        Mileage = "34",
+                        Year = "2021"
                     }
 
                 );

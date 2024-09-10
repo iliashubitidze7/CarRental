@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CR.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class InitializeDb : Migration
+    public partial class InitializeDbCars : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,12 +19,14 @@ namespace CR.DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Model = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Year = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mileage = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Seats = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Fuel = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Transmission = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Interior = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    PriceFor8 = table.Column<double>(type: "float", nullable: false),
                     StartingDate = table.Column<DateOnly>(type: "date", nullable: false),
                     EndDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },

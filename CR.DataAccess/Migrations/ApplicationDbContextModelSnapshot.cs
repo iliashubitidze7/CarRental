@@ -44,15 +44,16 @@ namespace CR.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Mileage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<double>("PriceFor8")
                         .HasColumnType("float");
 
                     b.Property<string>("Seats")
@@ -71,6 +72,10 @@ namespace CR.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Cars");
@@ -80,43 +85,46 @@ namespace CR.DataAccess.Migrations
                         {
                             Id = 1,
                             EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Gasoline",
+                            Fuel = "Petrol",
                             Interior = "leathar",
-                            Model = "Mercedes CLS 5.5 2020",
+                            Mileage = "147",
+                            Model = "Mercedes CLS 5.5",
                             Price = 100.0,
-                            PriceFor8 = 80.0,
                             Seats = "4",
                             StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Authomatic",
-                            Type = "Sedan"
+                            Transmission = "Auto",
+                            Type = "Sedan",
+                            Year = "2020"
                         },
                         new
                         {
                             Id = 2,
                             EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Gasoline",
+                            Fuel = "Petrol",
                             Interior = "Fabric",
-                            Model = "Mazda 6 2.0 2016",
+                            Mileage = "95",
+                            Model = "Mazda 6 2.0",
                             Price = 70.0,
-                            PriceFor8 = 50.0,
                             Seats = "5",
                             StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Authomatic",
-                            Type = "Sedan"
+                            Transmission = "Auto",
+                            Type = "Sedan",
+                            Year = "2016"
                         },
                         new
                         {
                             Id = 3,
                             EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Gasoline",
+                            Fuel = "Petrol",
                             Interior = "leathar",
-                            Model = "BMW X5 4.0 2018",
+                            Mileage = "112",
+                            Model = "BMW X5 4.0",
                             Price = 90.0,
-                            PriceFor8 = 70.0,
                             Seats = "4",
                             StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Mechanical",
-                            Type = "Sedan"
+                            Transmission = "Manual",
+                            Type = "Sedan",
+                            Year = "2018"
                         },
                         new
                         {
@@ -124,13 +132,14 @@ namespace CR.DataAccess.Migrations
                             EndDate = new DateOnly(1, 1, 1),
                             Fuel = "Diesel",
                             Interior = "Fabric",
-                            Model = "Mecedes Viano 2.5 2021",
+                            Mileage = "34",
+                            Model = "Mecedes Viano 2.5",
                             Price = 120.0,
-                            PriceFor8 = 100.0,
                             Seats = "7",
                             StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Authomatic",
-                            Type = "Van"
+                            Transmission = "Auto",
+                            Type = "Van",
+                            Year = "2021"
                         });
                 });
 #pragma warning restore 612, 618

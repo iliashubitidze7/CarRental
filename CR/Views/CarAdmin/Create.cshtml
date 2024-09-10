@@ -1,0 +1,103 @@
+﻿@model Car
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Car - Car Rental</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Create New Car</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Form Start -->
+                <form asp-action="Create" asp-controller="CarAdmin" method="post" enctype="multipart/form-data">
+                    <!-- Car Model -->
+                    <div class="mb-3">
+                        <label asp-for="Model" class="form-label">Model (Required, max 50 characters)</label>
+                        <input asp-for="Model" class="form-control" maxlength="50" required />
+                        <span asp-validation-for="Model" class="text-danger"></span>
+                    </div>
+
+                    <!-- Car Type -->
+                    <div class="mb-3">
+                        <label asp-for="Type" class="form-label">Type (Required)</label>
+                        <input asp-for="Type" class="form-control" required />
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+
+                    <!-- Car Year -->
+                    <div class="mb-3">
+                        <label asp-for="Year" class="form-label">Year</label>
+                        <input asp-for="Year" class="form-control" />
+                        <span asp-validation-for="Year" class="text-danger"></span>
+                    </div>
+
+                    <!-- Mileage -->
+                    <div class="mb-3">
+                        <label asp-for="Mileage" class="form-label">Mileage</label>
+                        <input asp-for="Mileage" class="form-control" />
+                        <span asp-validation-for="Mileage" class="text-danger"></span>
+                    </div>
+
+                    <!-- Seats -->
+                    <div class="mb-3">
+                        <label asp-for="Seats" class="form-label">Seats (Required, max 5 characters)</label>
+                        <input asp-for="Seats" class="form-control" maxlength="5" required />
+                        <span asp-validation-for="Seats" class="text-danger"></span>
+                    </div>
+
+                    <!-- Fuel -->
+                    <div class="mb-3">
+                        <label asp-for="Fuel" class="form-label">Fuel (Required)</label>
+                        <input asp-for="Fuel" class="form-control" required />
+                        <span asp-validation-for="Fuel" class="text-danger"></span>
+                    </div>
+
+                    <!-- Transmission -->
+                    <div class="mb-3">
+                        <label asp-for="Transmission" class="form-label">Transmission (Required)</label>
+                        <input asp-for="Transmission" class="form-control" required />
+                        <span asp-validation-for="Transmission" class="text-danger"></span>
+                    </div>
+
+                    <!-- Interior -->
+                    <div class="mb-3">
+                        <label asp-for="Interior" class="form-label">Interior</label>
+                        <input asp-for="Interior" class="form-control" />
+                        <span asp-validation-for="Interior" class="text-danger"></span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="mb-3">
+                        <label asp-for="Price" class="form-label">Price</label>
+                        <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <!-- Image URL -->
+
+                    <div class="mb-3">
+                        <label asp-for="ImageUrl" class="form-label">Image URL</label>
+                        <input type="file" name="file" class="form-control" multiple/>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-success w-100">Create Car</button>
+
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="CarAdmin" asp-action="index" class="btn btn-outline-primary">Back to list</a>
+                    </div>
+                </form>
+                <!-- Form End -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS + Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
