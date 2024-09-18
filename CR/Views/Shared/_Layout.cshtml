@@ -26,6 +26,8 @@
 
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet" asp-append-version="true">
+    <!-- Render the Scripts section if it exists -->
+    @RenderSection("Scripts", required: false)
 
 
 
@@ -82,15 +84,17 @@
                         <a asp-controller="CarAdmin" asp-area="Admin" asp-action="Index" class="nav-item nav-link">Car</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Get Started</a>
+                    <partial name="_LoginPartial" />
                 </div>
             </nav>
         </div>
     </div>
 
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+
         </main>
     </div>
 

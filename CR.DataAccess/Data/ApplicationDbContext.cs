@@ -14,6 +14,7 @@ namespace CR.DataAccess.Data
         }
 
         public DbSet<Car> Cars { get; set; }
+        public DbSet<ApplicationUser> applicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
