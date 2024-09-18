@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CR.DataAccess\CR.DataAccess.csproj" />
+    <ProjectReference Include="..\CR.Utility\CR.Utility.csproj" />
   </ItemGroup>
 
 </Project>
