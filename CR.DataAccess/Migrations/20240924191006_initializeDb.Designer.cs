@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CR.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240918110152_ExtandIdentityUser")]
-    partial class ExtandIdentityUser
+    [Migration("20240924191006_initializeDb")]
+    partial class initializeDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,68 +82,6 @@ namespace CR.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cars");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Petrol",
-                            Interior = "leathar",
-                            Mileage = "147",
-                            Model = "Mercedes CLS 5.5",
-                            Price = 100.0,
-                            Seats = "4",
-                            StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Auto",
-                            Type = "Sedan",
-                            Year = "2020"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Petrol",
-                            Interior = "Fabric",
-                            Mileage = "95",
-                            Model = "Mazda 6 2.0",
-                            Price = 70.0,
-                            Seats = "5",
-                            StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Auto",
-                            Type = "Sedan",
-                            Year = "2016"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Petrol",
-                            Interior = "leathar",
-                            Mileage = "112",
-                            Model = "BMW X5 4.0",
-                            Price = 90.0,
-                            Seats = "4",
-                            StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Manual",
-                            Type = "Sedan",
-                            Year = "2018"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            EndDate = new DateOnly(1, 1, 1),
-                            Fuel = "Diesel",
-                            Interior = "Fabric",
-                            Mileage = "34",
-                            Model = "Mecedes Viano 2.5",
-                            Price = 120.0,
-                            Seats = "7",
-                            StartingDate = new DateOnly(1, 1, 1),
-                            Transmission = "Auto",
-                            Type = "Van",
-                            Year = "2021"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -300,12 +238,10 @@ namespace CR.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -342,12 +278,10 @@ namespace CR.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
